@@ -1,0 +1,20 @@
+---
+import BubbleText from "./Bubble_text.astro"
+
+interface Props {
+	href: string;
+  bubbleText?: string;
+  anchorClassName: string;
+}
+
+const { href, bubbleText, anchorClassName } = Astro.props;
+---
+<div class="w-full group relative flex flex-col justify-end items-center">
+  <a href={href} target="_blank" class={`${anchorClassName} [&:hover+p]:opacity-100`}>
+    <slot/>
+  </a>
+  { bubbleText ?
+    <BubbleText text={bubbleText}/>:''
+  }
+  
+</div>

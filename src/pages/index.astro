@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Experiences from '../components/Experiences.astro';
+import Footer from '../components/Footer.astro';
+import Projects from '../components/Projects.astro';
+---
+
+<Layout title="Arcedo · Developer">
+	<main class="min-h-screen text-black font-dm-sans">
+		<Header />
+		<div class="bg-blue py-36">
+			<div class="w-8/12 mx-auto flex flex-col gap-36">
+				<Experiences />
+				<Projects />
+			</div>
+		</div>
+		<Footer/>
+	</main>
+</Layout>

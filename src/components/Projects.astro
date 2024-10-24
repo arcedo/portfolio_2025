@@ -1,0 +1,47 @@
+---
+import ProjectPreview from "./Project_preview.astro"
+const myProjects = [
+  {
+    name: 'fundflow',
+    link: '',
+    img: '/images/fundflow.webp',
+    description: '',
+    href: '',
+    repoHref: ''
+  },
+  {
+    name: 'asd',
+    link: '',
+    img: '/images/fundflow.webp',
+    description: ''
+  }
+]
+---
+<section>
+  <h2 class="uppercase font-montserrat font-bold text-4xl pb-10">
+    Projects
+  </h2>
+  <div class="flex items-center relative">
+    <div class="grid grid-cols-2 w-1/2">
+      {myProjects.map((project, index) => {
+        if(index % 2 !== 0){
+          return (
+            <ProjectPreview name={project.name} img={project.img} />
+            <div class="border-l border-r border-black"></div>
+          )
+        } else {
+          return (
+            <div class="border-l border-black"></div>
+            <ProjectPreview name={project.name} img={project.img} isOdd={true}/>
+          )
+        }
+      })}
+    </div>
+    <article class="border-r border-black invisible">
+      <div class="flex justify-between items-end pl-5 border-b border-black">
+        <h3 class="font-montserrat font-bold text-2xl">Some Project</h3>
+      </div>
+      <p>Some Text here</p>
+    </article>
+  </div>
+</section>

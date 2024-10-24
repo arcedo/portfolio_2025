@@ -1,0 +1,91 @@
+---
+  import Linkedin from "../icons/linkedin.astro";
+  import Github from "../icons/github.astro";
+  import SocialLinks from "./Social_links.astro";
+  import EmailCopy from "./Email_copy.svelte";
+  import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constants.ts';
+---
+<section class="w-full min-h-screen bg-gradient flex justify-center items-center flex-col gap-8 shadow-primary drop-shadow-md">
+  <h1 class="font-montserrat font-bold text-8xl tracking-[-.5rem] flex flex-col items-center">
+    Hi, I'm
+    <span class="inline">
+      <span id="name-title" class="highlight-offset tracking-tight leading-3 font-dm-sans">Marc Arcedo</span>
+    </span>
+    <span class="text-9xl tracking-[-.9rem]">
+      A Web Developer.
+    </span>
+  </h1>
+  <p class="font-dm-sans text-xl font-semibold w-5/12 text-center">
+    <span class="highlight-offset">I focus</span> on writing <span class="highlight-offset">clean</span>, 
+    <span class="highlight-offset">reliable code</span> that 
+    <span class="highlight-offset">helps</span> make work easier for <br> <span class="highlight-offset">my team</span>.
+    Always learning and 
+    <span class="highlight-offset">staying up to date</span> with the latest <br> technologies
+    <span class="highlight-offset">to deliver the best results</span>.
+  </p>
+  <div class="flex justify-around items-center gap-5">
+    <SocialLinks 
+      href={LINKEDIN_URL} 
+      bubbleText="LinkedIn"
+      anchorClassName="bg-black text-primary p-1 flex justify-center items-center rounded-md w-[3.375rem] h-[3.375rem] hover:scale-95 hover:bg-black/95 transition-all duration-500"
+    >
+      <Linkedin/>
+    </SocialLinks>
+    <SocialLinks 
+      href={GITHUB_URL} 
+      bubbleText="GitHub"
+      anchorClassName="bg-black text-primary p-1 flex justify-center items-center rounded-md w-[3.375rem] h-[3.375rem] hover:scale-95 hover:bg-black/95 transition-all duration-500"
+    >
+      <Github/>
+    </SocialLinks>
+    <SocialLinks 
+      href={RESUME_URL} 
+      bubbleText="Resume"
+      anchorClassName="bg-black text-primary p-1 flex justify-center items-center rounded-md w-[3.375rem] h-[3.375rem] hover:scale-95 hover:bg-black/95 transition-all duration-500"
+    >
+      <strong class="font-bold text-3xl font-montserrat">CV</strong>
+    </SocialLinks>
+    <EmailCopy 
+      client:load 
+      emailAddress={EMAIL_ADDRESS} 
+      bubbleText="Copy my email" 
+      successText="Ready to contact me!" 
+      buttonClassName="bg-black text-primary p-1 flex justify-center items-center rounded-md w-[3.375rem] h-[3.375rem] hover:scale-95 hover:bg-black/95 transition-all duration-500 [&:hover+p]:opacity-100"
+      bubbleClassName={'cursor-default px-3 py-0.5 rounded-full bg-black/95 text-primary opacity-0 transition-opacity duration-300 absolute -bottom-9 shadow-md'}
+    >
+      <strong class="font-bold text-3xl">@</strong>
+    </EmailCopy>
+  </div>
+</section>
+
+<style>
+    #name-title {
+        animation: fontChange 6s infinite;
+    }
+    @font-face {
+        font-family: 'DotGothic';
+        src: url('/fonts/DotGothic16-Regular.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: 'NotoSerif';
+        src: url('/fonts/NotoSerif_SemiCondensed-Medium.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'IBMPlexMono';
+      src: url('/fonts/IBMPlexMono-Medium.woff2') format('woff2');
+    }
+    @keyframes fontChange {
+        0% {
+            font-family: 'DMSans', sans-serif;
+        }
+        25% {
+            font-family: 'NotoSerif', sans-serif;
+        }
+        50% {
+            font-family: 'IBMPlexMono', sans-serif;
+        }
+        75% {
+            font-family: 'DotGothic', sans-serif;
+        }
+    }
+</style>

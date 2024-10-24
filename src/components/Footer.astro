@@ -1,0 +1,74 @@
+---
+import SocialLinks from "./Social_links.astro";
+import EmailCopy from "./Email_copy.svelte";
+import CopyClipboard from "../icons/copy_clipboard.astro";
+import ArrowTopRight from "../icons/arrow_top_right.astro";
+import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constants.ts';
+---
+<footer class="pb-20 pt-12 text-primary">
+  <div class="w-8/12 mx-auto grid grid-cols-2 min-h-48">
+    <div class="flex flex-col justify-between items-start text-primary/80 text-sm relative">
+      <p class="font-bold z-10">If you have any questions or would like to connect, feel free to reach out.</p>
+      <pre class="text-[0.7rem] group hover:text-primary transition-colors duration-100 cursor-default">
+ (\.   <span class="group-hover:text-purple-400 transition-colors duration-300">\</span>      ,/)
+  \(   <span class="group-hover:text-purple-400 transition-colors duration-300">|\</span>     )/
+  <span class="group-hover:text-purple-600 transition-colors duration-500">//\</span>  <span class="group-hover:text-purple-400 transition-colors duration-500">| \</span>   <span class="group-hover:text-purple-600 transition-colors duration-500">/\\</span>
+ <span class="group-hover:text-purple-600 transition-colors duration-500">(/ /\_</span>#<span class="group-hover:text-accent transition-colors duration-500">oo</span>#<span class="group-hover:text-purple-600 transition-colors duration-500">_/\ \)</span>
+  <span class="group-hover:text-purple-600 transition-colors duration-500">\/\</span>  ####  <span class="group-hover:text-purple-600 transition-colors duration-500">/\/</span>
+       `##'
+      </pre>
+      <p class="">
+        Based on my previous design and build using 
+        <span class="text-primary/90 font-semibold">Astro</span> with <span class="text-primary/90 font-semibold">Svelte</span> and <span class="text-primary/90 font-semibold">Tailwind CSS</span>, 
+        deployed in my own <span class="text-primary/90 font-semibold">VPS</span>. Titles in font <span class="text-primary/90 font-semibold">Montserrat</span> 
+        (the best) and text with font <span class="text-primary/90 font-semibold">DM Sans</span>.
+      </p>
+    </div>
+    <div class="text-primary/90">
+      <h2 class="font-montserrat tracking-[-.1rem] font-bold text-3xl text-right pb-4">Social</h2>
+      <ul class="flex flex-col gap-2.5 justify-center items-end">
+        <li>
+          <SocialLinks 
+            href={LINKEDIN_URL} 
+            anchorClassName="flex items-end group hover:text-accent transition-all duration-500"
+          >
+            LinkedIn
+            <ArrowTopRight width="18" height="18"/>
+          </SocialLinks>
+        </li>
+        <li>
+          <SocialLinks 
+            href={GITHUB_URL} 
+            anchorClassName="flex items-end group hover:text-accent transition-all duration-500"
+          >
+            GitHub
+            <ArrowTopRight width="18" height="18"/>
+          </SocialLinks>
+        </li>
+        <li>
+          <SocialLinks 
+            href={RESUME_URL} 
+            anchorClassName="flex items-end group hover:text-accent transition-all duration-500"
+          >
+            Resume
+            <ArrowTopRight width="18" height="18"/>
+          </SocialLinks>
+        </li>
+        <li>
+          <EmailCopy
+            client:load 
+            emailAddress={EMAIL_ADDRESS} 
+            bubbleText="Copy my email" 
+            successText="Ready!" 
+            onlyText={true}
+            buttonClassName="flex items-end gap-1 group hover:text-accent transition-all duration-500 [&:hover+p]:opacity-100"
+            bubbleClassName="cursor-default px-3 py-0.5 rounded-full bg-primary/85 text-black opacity-0 transition-opacity duration-300 absolute -left-36 shadow-md"
+          >
+            {EMAIL_ADDRESS}
+            <CopyClipboard width="18" height="18"/>
+          </EmailCopy>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

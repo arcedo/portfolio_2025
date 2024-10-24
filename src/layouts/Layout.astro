@@ -1,0 +1,70 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-black">
+		<slot />
+	</body>
+</html>
+<style is:global>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	@font-face {
+		font-family: "Montserrat";
+		src: url("/fonts/Montserrat-VariableFont_wght.woff2")
+	}
+	@font-face {
+		font-family: "DMSans";
+		src: url("/fonts/DMSans-VariableFont_opsz,wght.woff2");
+	}
+
+	.bg-gradient-fixed{
+    background-attachment: fixed;
+    background: radial-gradient(circle, #EDF2FB, #D7E3FC, #CCDBFD, #C1D3FE, #E2EAFC);
+    background-size: 100% 100%;
+}
+
+	.bg-gradient{
+    background-attachment: fixed;
+    background: radial-gradient(circle, #EDF2FB, #D7E3FC, #CCDBFD, #C1D3FE, #E2EAFC);
+    background-size: 200% 150%;
+    animation: gradient-radial 10s ease infinite alternate;
+  }
+
+	@keyframes gradient-radial {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+	}
+
+	.highlight-offset {
+    @apply relative;
+  }
+  .highlight-offset::before {
+    content: " ";
+    @apply absolute bg-accent w-full h-2/4 top-[40%] left-[2%];
+    z-index: -1;
+  }
+</style>
