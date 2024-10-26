@@ -3,16 +3,29 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Experiences from '../components/Experiences.astro';
 import Footer from '../components/Footer.astro';
-import Projects from '../components/Projects.astro';
+import Projects from '../components/Projects.svelte';
+import Contact from '../components/Contact.astro';
+import Navbar from '../components/Navbar.astro';
+import ArrowRight from '../icons/arrow_right.astro';
+import ArrowTopRight from '../icons/arrow_top_right.astro';
+import { SECTIONS } from '../constants/index';
 ---
 
 <Layout title="Arcedo · Developer">
 	<main class="min-h-screen text-black font-dm-sans">
-		<Header />
-		<div class="bg-blue py-36">
-			<div class="w-8/12 mx-auto flex flex-col gap-36">
-				<Experiences />
-				<Projects />
+		<div class="relative">
+			<Navbar sections={SECTIONS} />
+			<Header id={SECTIONS[0]} />
+			<div class="bg-gradient-fixed py-36">
+				<div class="w-9/12 mx-auto flex flex-col gap-36">
+					<Experiences id={SECTIONS[1]} />
+					<Projects client:load id={SECTIONS[2]}> 
+						<ArrowRight slot="projectPreviewArrow" width='20' height='20' />
+						<ArrowTopRight slot="projectTitleArrow" width='28' height='28' />
+						<ArrowTopRight slot="projectRepoArrow" width='20' height='20' />
+					</Projects> 
+					<Contact id={SECTIONS[3]} />
+				</div>
 			</div>
 		</div>
 		<Footer/>

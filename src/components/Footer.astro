@@ -3,12 +3,11 @@ import SocialLinks from "./Social_links.astro";
 import EmailCopy from "./Email_copy.svelte";
 import CopyClipboard from "../icons/copy_clipboard.astro";
 import ArrowTopRight from "../icons/arrow_top_right.astro";
-import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constants.ts';
+import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constants/index';
 ---
 <footer class="pb-20 pt-12 text-primary">
-  <div class="w-8/12 mx-auto grid grid-cols-2 min-h-48">
-    <div class="flex flex-col justify-between items-start text-primary/80 text-sm relative">
-      <p class="font-bold z-10">If you have any questions or would like to connect, feel free to reach out.</p>
+  <div class="w-9/12 mx-auto grid grid-cols-2 min-h-48">
+    <div class="flex flex-col items-start text-primary/80 text-sm relative">
       <pre class="text-[0.7rem] group hover:text-primary transition-colors duration-100 cursor-default">
  (\.   <span class="group-hover:text-purple-400 transition-colors duration-300">\</span>      ,/)
   \(   <span class="group-hover:text-purple-400 transition-colors duration-300">|\</span>     )/
@@ -20,8 +19,8 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
       <p class="">
         Based on my previous design and build using 
         <span class="text-primary/90 font-semibold">Astro</span> with <span class="text-primary/90 font-semibold">Svelte</span> and <span class="text-primary/90 font-semibold">Tailwind CSS</span>, 
-        deployed in my own <span class="text-primary/90 font-semibold">VPS</span>. Titles in font <span class="text-primary/90 font-semibold">Montserrat</span> 
-        (the best) and text with font <span class="text-primary/90 font-semibold">DM Sans</span>.
+        deployed in my own <span class="text-primary/90 font-semibold">VPS</span>. Titles with font <span class="text-primary/90 font-semibold">Montserrat</span> 
+        (the best) and the rest in font <span class="text-primary/90 font-semibold">DM Sans</span>.
       </p>
     </div>
     <div class="text-primary/90">
@@ -30,7 +29,7 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
         <li>
           <SocialLinks 
             href={LINKEDIN_URL} 
-            anchorClassName="flex items-end group hover:text-accent transition-all duration-500"
+            anchorClassName="flex items-end group/arrow hover:text-accent transition-all duration-500"
           >
             LinkedIn
             <ArrowTopRight width="18" height="18"/>
@@ -39,7 +38,7 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
         <li>
           <SocialLinks 
             href={GITHUB_URL} 
-            anchorClassName="flex items-end group hover:text-accent transition-all duration-500"
+            anchorClassName="flex items-end group/arrow hover:text-accent transition-all duration-500"
           >
             GitHub
             <ArrowTopRight width="18" height="18"/>
@@ -48,7 +47,7 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
         <li>
           <SocialLinks 
             href={RESUME_URL} 
-            anchorClassName="flex items-end group hover:text-accent transition-all duration-500"
+            anchorClassName="flex items-end group/arrow hover:text-accent transition-all duration-500"
           >
             Resume
             <ArrowTopRight width="18" height="18"/>
@@ -61,7 +60,7 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
             bubbleText="Copy my email" 
             successText="Ready!" 
             onlyText={true}
-            buttonClassName="flex items-end gap-1 group hover:text-accent transition-all duration-500 [&:hover+p]:opacity-100"
+            buttonClassName="flex items-center gap-1 group hover:text-accent transition-all duration-500 [&:hover+p]:opacity-100"
             bubbleClassName="cursor-default px-3 py-0.5 rounded-full bg-primary/85 text-black opacity-0 transition-opacity duration-300 absolute -left-36 shadow-md"
           >
             {EMAIL_ADDRESS}

@@ -1,38 +1,30 @@
 ---
-import ArrowTopRight from "../icons/arrow_top_right.astro"
+import ArrowTopRight from "../icons/arrow_top_right.astro";
+import type { Experience} from "../types/Experience";
 interface Props {
-	experience: {
-    startMonth: string,
-    endMonth: string,
-    startYear?: number,
-    endYear: number,
-    title: string,
-    subtitle: string,
-    text: Array<string>,
-    href: string,
-    isOdd: boolean
-  }
+  isOdd: boolean
+  experience: Experience
 }
 
-const { experience } = Astro.props;
+const { isOdd, experience } = Astro.props;
 ---
-<a href={experience.href} target="_blank" class={`pb-5 border-black ${experience.isOdd ? 'border-r':'border-x'} group hover:bg-black transition-colors duration-500 hover:text-primary`}>
+<a href={experience.linkPage} target="_blank" class={`pb-5 border-black ${isOdd ? 'border-r':'border-x'} group group/arrow hover:bg-black transition-colors duration-500 hover:text-primary`}>
   <div class="border-b border-black pt-5">
-    <p class="text-black/70 font-light pl-5 group-hover:text-primary/70 transition-colors duration-500">{
+    <p class="text-black/70 font-light pl-5 group-hover:text-primary/90 transition-colors duration-500">{
       experience.startYear && experience.startYear != experience.endYear ? 
       `${experience.startYear} - ${experience.endYear}`
       :
       `${experience.startMonth} - ${experience.endMonth} ${experience.endYear}`}
     </p>
-    <div class="pl-5 flex justify-between items-end group-hover:text-accent transition-colors duration-500">
-      <h3 class="font-montserrat font-bold text-2xl">{experience.title}</h3>
+    <div class="pl-5 flex justify-between items-end group-hover:text-accent">
+      <h3 class="font-montserrat font-bold text-2xl">{experience.company}</h3>
       <ArrowTopRight width="28" height="28"/>
     </div>
   </div>
   <div class="pl-5 pr-3 py-2.5 text-sm">
-    <h4 class="text-black/75 font-bold text-lg group-hover:text-accent/70 transition-colors duration-500">{experience.subtitle}</h4>
+    <h4 class="text-black/75 font-bold text-lg group-hover:text-accent/85 transition-colors duration-500">{experience.title}</h4>
     <ol class="">
-      {experience.text.map((line) => (
+      {experience.description.map((line) => (
         <li class="py-1">{line}</li>
       ))}
     </ol>

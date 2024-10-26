@@ -1,0 +1,26 @@
+---
+interface Props {
+	sections: Array<string>;
+}
+
+const { sections } = Astro.props;
+---
+<nav class="sticky top-[96vh] h-0 z-20">
+    <div class="relative flex justify-center items-center">
+        <div
+            class="absolute w-fit flex justify-around p-0.5 rounded-full text-black backdrop-blur-md bg-primary/80 shadow-sm capitalize font-semibold"
+        >
+            {sections.map((section) =>{
+                return (
+                    <a
+                    href={`#${section}`}
+                    aria-label={section}
+                    class="hover:bg-black hover:text-accent px-2.5 py-1.5 rounded-full transition-all duration-300"
+                >
+                    {section}
+                </a>
+                );
+            })}
+        </div>
+    </div>
+</nav>

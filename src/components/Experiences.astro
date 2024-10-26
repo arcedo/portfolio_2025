@@ -1,65 +1,33 @@
 ---
 import Experience from './Experience.astro';
-const myExperiences = [
-  {
-    startMonth: 'Jun',
-    endMonth: 'Dec',
-    startYear: 2023,
-    endYear: 2023,
-    title: 'CodeBiting',
-    subtitle: 'Intern · Full Stack Developer',
-    text: [
-      'Implemented a RESTful API using Node.js and Express to manage logistics containers, enhancing functionality through comprehensive unit testing.',
-      'Deployed and tested various server scenarios using Docker, Docker Swarm, and Redis, generating a performance comparison report using Artillery (a load testing tool) to recommend the optimal solution using an Ubuntu Server and PM2.',
-      'Researched and learned the front-end framework Vue.js to develop a user interface, enabling clients to create, view, and manage containers through the RESTful API.'
-    ],
-    href: 'https://github.com/CodeBiting'
-  },
-  {
-    startMonth: 'Sep',
-    endMonth: 'Sep',
-    startYear: 2022,
-    endYear: 2024,
-    title: 'Web Applications Development',
-    subtitle: 'Student · Certificate of Higher Education (HNC)',
-    text: ['Some text here...'],
-    href: ''
-  },
-  {
-    startMonth: 'Sep',
-    endMonth: 'Sep',
-    startYear: 2020,
-    endYear: 2022,
-    title: 'Microcomputer Systems & Networks',
-    subtitle: 'Student · Vocational Education and Training (VET)',
-    text: ['Some text here...'],
-    href: ''
-  }
-]
+import {EXPERIENCES} from '../constants/experiences'; 
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
 ---
-<section class="">
+<section {id}>
   <div class="pb-10">
     <h2 class="uppercase font-montserrat font-bold text-4xl">
       Experience 
     </h2>
+    <!-- I don't have enough experience so i put my studies here to -->
     <p class="uppercase font-montserrat font-bold text-3xl">
       & Studies
     </p>
   </div>
   <div class="">
     <div class="grid grid-cols-2">
-      {myExperiences.map((myExperience, index) => {
-        if(index % 2 !== 0){
-          return (
-            <div class="border-l border-r border-black"></div>
-            <Experience experience={{...myExperience, isOdd: true}}/>
-          )
-        } else {
-          return (
-            <Experience experience={{...myExperience, isOdd: false}}/>
-            <div class="border-r border-black"></div>
-          )
-        }
+      {EXPERIENCES.map((experience, index) => {
+        return (
+          <>
+            {index % 2 !== 0 && <div class="border-l border-r border-black"></div>}
+            
+            <Experience experience={experience} isOdd={index % 2 !== 0} />
+
+            {index % 2 === 0 && <div class="border-r border-black"></div>}
+          </>
+        );
       })}
     </div>
   </div>
