@@ -1,6 +1,7 @@
 <script lang="ts">
     import { writable } from 'svelte/store';
     import { ALERTS } from '../constants/alerts.ts';
+    import { ENDPOINT } from '../constants/index.ts';
     let displayedAlert = -1;
     const message = writable({
         sender: {
@@ -37,8 +38,23 @@
             });
             return msg;
         });
-        if (displayedAlert !== -1) {
-            // call the API to send the email
+        if (displayedAlert === -1) {
+            await fetch(ENDPOINT+'message', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    sender: $message.sender.value,
+                    email: $message.email.value,
+                    subject: $message.subject.value,
+                    body: $message.body.value
+                })})
+                .then(async response => {
+                    if (response.status === 201) {
+                        displayedAlert = 3;
+                    } else {
+                        displayedAlert = 2;
+                    }
+                });
         }
     }
 </script>
