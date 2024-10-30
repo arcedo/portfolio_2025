@@ -29,6 +29,7 @@ bun.lockb
 
 # .vs folder
 .vs/
+.vscode/
 .idea
 
 .config/*

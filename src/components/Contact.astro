@@ -15,7 +15,7 @@ const { id } = Astro.props;
     </span>
     Me
   </h2>
-  <Form>
+  <Form client:load >
     <Fragment slot="sendButtonStyle">
       <Send
         width="28"
@@ -24,7 +24,7 @@ const { id } = Astro.props;
       />
       <BubbleText
         text="Send"
-        className="absolute text-primary w-[4rem] rounded-full px-3 py-0.5 bottom-[.03rem] right-10 shadow-md bg-black/95 opacity-0 transition-opacity duration-300"
+        className="cursor-default absolute text-primary w-[4rem] rounded-full px-3 py-0.5 bottom-[.03rem] right-10 shadow-md bg-black/95 opacity-0 transition-opacity duration-300"
       />
     </Fragment>
   </Form>

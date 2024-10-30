@@ -1,0 +1,8 @@
+---
+  const { startDate } = Astro.props;
+  const numberDays = Math.round((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+---
+
+<article class="fixed top-8 sm:right-8 right-2 w-fit bg-primary/60 rounded-full backdrop-blur-md shadow-sm text-black z-20 px-3 py-1">
+  <span class="font-extrabold">{numberDays}</span> days searching for a job
+</article>

@@ -1,18 +1,53 @@
 <script lang="ts">
-    export let image, name, isEven, onClick;
+    export let image, name, isEven, onClick, displayed, href;
+    import { onMount } from 'svelte';
+    import { writable } from 'svelte/store';
+
+    const pageWidth = writable(0);
+
+    function handleResize() {
+        pageWidth.set(window.innerWidth);
+    }
+
+    onMount(() => {
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    });
 </script>
 
-<button on:click={onClick} class={`border-l border-black ${isEven ? 'border-r' : ''} border-black group`}>
-    <span
-        class="flex justify-between items-center border-b border-black pl-2.5 font-montserrat font-bold group-hover:text-accent group-hover:bg-black transition-all duration-500"
+{#if $pageWidth < 768}
+    <a
+        {href}
+        target="_blank"
+        aria-label={name + ' project repository'}
+        class={`border-l border-black ${isEven ? 'border-r' : ''} border-black group`}
     >
-        {name}
-        <!-- <ArrowRight/> -->
-        <slot />
-    </span>
-    <img
-        src={image}
-        alt={`${name} preview image`}
-        class={`grayscale group-hover:grayscale-0 transition-colors duration-500`}
-    />
-</button>
+        <span
+            class={`flex justify-between items-center text-sm font-semibold md:text-base border-b border-black pl-1 md:pl-2.5 font-montserrat md:font-bold ${displayed ? 'text-accent bg-black' : 'group-hover:text-accent group-hover:bg-black'} transition-all duration-500`}
+        >
+            {name}
+            <!-- <ArrowRight/> -->
+            <slot />
+        </span>
+        <img
+            src={image}
+            alt={`${name} preview image`}
+            class={`${displayed ? '' : 'grayscale group-hover:grayscale-0'} transition-colors duration-500`}
+        />
+    </a>
+{:else}
+    <button on:click={onClick} class={`border-l border-black ${isEven ? 'border-r' : ''} border-black group`}>
+        <span
+            class={`flex justify-between items-center text-sm font-semibold md:text-base border-b border-black pl-1 md:pl-2.5 font-montserrat md:font-bold ${displayed ? 'text-accent bg-black' : 'group-hover:text-accent group-hover:bg-black'} transition-all duration-500`}
+        >
+            {name}
+            <!-- <ArrowRight/> -->
+            <slot />
+        </span>
+        <img
+            src={image}
+            alt={`${name} preview image`}
+            class={`${displayed ? '' : 'grayscale group-hover:grayscale-0'} transition-colors duration-500`}
+        />
+    </button>
+{/if}
