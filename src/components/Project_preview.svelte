@@ -6,16 +6,27 @@
     const pageWidth = writable(0);
 
     function handleResize() {
-        pageWidth.set(window.innerWidth);
+        if (typeof window !== 'undefined') {
+            pageWidth.set(window.innerWidth);
+            console.log($pageWidth); // Log the current width
+        }
     }
 
     onMount(() => {
+        // Set initial width
+        handleResize();
+
+        // Add event listener for window resize
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+
+        // Clean up event listener on component destroy
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     });
 </script>
 
-{#if $pageWidth < 768}
+{#if $pageWidth < 1024}
     <a
         {href}
         target="_blank"

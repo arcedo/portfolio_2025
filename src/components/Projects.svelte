@@ -8,7 +8,7 @@
 <section {id}>
     <h2 class="uppercase font-montserrat font-bold text-4xl pb-10">Projects</h2>
     <div class="flex items-center md:gap-32 relative">
-        <div class="grid grid-cols-2 md:w-1/2">
+        <div class="grid grid-cols-2 lg:w-1/2">
             {#each PROJECTS as project, index}
                 {#if index % 2 === 0}
                     <div class="border-l border-black"></div>
@@ -30,7 +30,7 @@
                 {/if}
             {/each}
         </div>
-        <article class="sticky py-[6%] top-[39%] z-0 self-start w-1/2 hidden md:block">
+        <article class="sticky py-[6%] top-[39%] z-0 self-start w-1/2 hidden lg:block">
             {#if displayedProject === -1}
                 <div
                     class="hover:bg-black hover:text-accent py-24 border-black border hover:shadow-md flex justify-center items-center transition-colors duration-500"
