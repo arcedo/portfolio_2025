@@ -51,6 +51,12 @@
                 .then(async response => {
                     if (response.status === 201) {
                         displayedAlert = 3;
+                        message.update((msg) => {
+                            Object.entries(msg).forEach(([key, field]) => {
+                                field.value = '';
+                            });
+                            return msg;
+                        });
                     } else {
                         displayedAlert = 2;
                     }
@@ -109,7 +115,7 @@
     ></textarea>
     <div class="flex justify-between items-start w-full">
         <p
-            class={`font-bold text-sm ${displayedAlert !== -1 && ALERTS[displayedAlert].status === 'Error' ? 'highlight-offset' : ''} transition-all duration-200`}
+            class={`font-bold text-sm ${displayedAlert !== -1 ? ALERTS[displayedAlert].status === 'Error' ? 'highlight-offset' : 'bg-black rounded-full px-2.5 py-1 text-accent shadow-sm' : ''} transition-all duration-200`}
         >
             {#if displayedAlert !== -1}
                 {ALERTS[displayedAlert].message}

@@ -8,7 +8,6 @@
     function handleResize() {
         if (typeof window !== 'undefined') {
             pageWidth.set(window.innerWidth);
-            console.log($pageWidth); // Log the current width
         }
     }
 
