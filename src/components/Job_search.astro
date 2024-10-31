@@ -4,9 +4,7 @@
   const numberDays = Math.round((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
 ---
 
-<div class="fixed top-8 sm:right-8 right-2 z-20">
-  <a href={LINKEDIN_URL} class="relative bg-primary/60 rounded-full backdrop-blur-md shadow-sm text-black z-20 px-3 py-1 group hover:text-accent hover:bg-black transition-colors duration-300">
-    <span class="group-hover:invisible transition-all duration-75 delay-75"><strong>{numberDays}</strong> days searching for a job</span>
-    <span class="invisible group-hover:visible absolute top-0 bottom-0 left-0 right-0 px-3 py-0.5 transition-all duration-200 delay-75">Help me change this!</span>
-  </a>
-</div>
+<a href={LINKEDIN_URL} target="_blank" class="fixed top-8 sm:right-8 right-2 z-20 bg-primary/60 rounded-full backdrop-blur-md shadow-sm text-black px-3 py-1 group hover:text-accent hover:bg-black/80 hover:font-semibold transition-colors w-[14.5rem] text-center duration-500">
+  <span class="group-hover:hidden"><strong>{numberDays}</strong> days searching for a job</span>
+  <span class="hidden group-hover:inline">Let's change this!</span>
+</a>
