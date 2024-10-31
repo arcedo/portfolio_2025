@@ -1,12 +1,10 @@
 ---
 import SocialLinks from "./Social_links.astro";
-import EmailCopy from "./Email_copy.svelte";
-import CopyClipboard from "../icons/copy_clipboard.astro";
 import ArrowTopRight from "../icons/arrow_top_right.astro";
 import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constants/index';
 ---
 <footer class="pt-16 pb-14 text-primary">
-  <div class="w-9/12 mx-auto grid md:grid-cols-2 grid-cols-1 gap-y-8">
+  <div class="w-10/12 md:w-9/12 mx-auto grid md:grid-cols-2 grid-cols-1 gap-y-8">
     <div class="flex flex-col items-start gap-2 text-primary/80 text-sm relative order-last md:order-first">
       <p class="">
         Based on my previous design and build using 
@@ -54,18 +52,13 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
           </SocialLinks>
         </li>
         <li>
-          <EmailCopy
-            client:load 
-            emailAddress={EMAIL_ADDRESS} 
-            bubbleText="Copy my email" 
-            successText="Ready!" 
-            onlyText={true}
-            buttonClassName="flex items-center gap-1 group hover:text-accent transition-all duration-500 [&:hover+p]:opacity-100"
-            bubbleClassName="cursor-default text-sm sm:text-base px-2 sm:px-3 py-0.5 rounded-full bg-primary/85 text-black opacity-0 transition-opacity duration-300 absolute md:-left-36 md:bottom-0 -bottom-6 shadow-md"
+          <SocialLinks 
+            href={'mailto:'+EMAIL_ADDRESS} 
+            anchorClassName="flex items-end group/arrow hover:text-accent transition-all duration-500"
           >
             {EMAIL_ADDRESS}
-            <CopyClipboard width="18" height="18"/>
-          </EmailCopy>
+            <ArrowTopRight width="18" height="18"/>
+          </SocialLinks>
         </li>
       </ul>
     </div>

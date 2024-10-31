@@ -65,7 +65,7 @@
     }
 </script>
 
-<div class="w-full md:w-9/12 mx-auto flex flex-col justify-center items-center gap-2.5 pt-10 md:pt-0">
+<div class="w-full lg:w-9/12 mx-auto flex flex-col justify-center items-center gap-2.5 pt-10 lg:pt-0">
     <div class="grid sm:grid-cols-2 grid-cols-1 gap-2.5 w-full">
         <input
             type="text"

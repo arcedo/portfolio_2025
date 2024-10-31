@@ -23,7 +23,7 @@
                     }
                 });
             },
-            { threshold: 0.6 },
+            { threshold: 0.5 },
         );
 
         sections.forEach((id) => {
@@ -37,7 +37,7 @@
     });
 </script>
 
-<nav class="sticky top-[96vh] h-0 z-20">
+<nav class="sticky top-[90vh] sm:top-[96vh] h-0 z-20">
     <div class="relative flex justify-center items-center">
         <div
             class="absolute min-w-6/12 sm:w-fit flex justify-around text-sm sm:text-base gap-0.5 sm:gap-1 p-0.5 rounded-full text-black backdrop-blur-md bg-primary/80 shadow-sm capitalize font-semibold"
