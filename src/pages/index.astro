@@ -8,13 +8,13 @@ import Contact from '../components/Contact.astro';
 import Navbar from '../components/Navbar.svelte';
 import ArrowRight from '../icons/arrow_right.astro';
 import ArrowTopRight from '../icons/arrow_top_right.astro';
-import JobSearch from '../components/Job_search.astro';
+import JobSearch from '../components/Job_search.svelte';
 import { SECTIONS, START_DATE_SEARCH_JOB, GOOGLE_TAG } from '../constants/index';
 ---
 
 <Layout title="Arcedo · Developer" description='' googleTag={GOOGLE_TAG}>
 	<main class="min-h-screen text-black font-dm-sans relative">
-		{START_DATE_SEARCH_JOB ? <JobSearch startDate={START_DATE_SEARCH_JOB}/>:''}
+		{START_DATE_SEARCH_JOB ? <JobSearch client:load startDate={START_DATE_SEARCH_JOB}/>:''}
 		<div class="relative">
 			<Navbar client:load sections={SECTIONS} />
 			<Header id={SECTIONS[0]} />
