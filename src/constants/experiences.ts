@@ -4,7 +4,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company:
       "Apex <span class='text-sm tracking-tight'>from Funraisers We Are</span>",
-    title: "Freelance · Full Stack Developer",
+    title: "Full Stack Developer",
     description: [
       `Currently, <span class="group-hover:text-accent/85 transition-colors duration-500 font-semibold">I am developing different apps</span> for this company, and this team specifically.`,
       `The first project was the <span class="group-hover:text-accent/85 transition-colors duration-500 font-semibold">landing page</span> for Apex, a simple page with <span class="group-hover:text-accent/85 transition-colors duration-500 font-semibold">internationalization</span> and an <span class="group-hover:text-accent/85 transition-colors duration-500 font-semibold">application form</span>. All in <span class="group-hover:text-accent/85 transition-colors duration-500 font-semibold">Astro</span>, <span class="group-hover:text-accent/85 transition-colors duration-500 font-semibold">Tailwind CSS</span> and some <span class="group-hover:text-accent/85 transition-colors duration-500 font-semibold">Svelte</span>.`,
