@@ -26,6 +26,7 @@ pnpm-lock.yaml
 package-lock.json
 yarn.lock
 bun.lockb
+bun.lock
 
 # .vs folder
 .vs/

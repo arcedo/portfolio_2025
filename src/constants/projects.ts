@@ -1,62 +1,48 @@
 import type { Project } from "../types/Project";
-const imagesDir = '/images/';
+const imagesDir = "/images/";
 
+//<span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold "></span>,
 export const PROJECTS: Project[] = [
   {
-    name: 'fundflow',
-    image: imagesDir+'fundflow.webp',
-    description: "A crowdfunding platform with social media features like follows, likes/dislikes, and reviews from collaborators and funders. This was a final grade project done in pairs, with a three-month timeframe to brainstorm, design, and develop the app. We created use case diagrams, designed the UI/UX, and structured the database. Finally, we developed the app with our chosen tech stack and presented the results to a committee.",
-    pageLink: 'https://fundflow.arcedo.dev/home',
-    repositoryLink: 'https://github.com/arcedo/fundflow-Backend',
-    tecnologies: [
-      'JavaScript',
-      'bun.JS',
-      'express',
-      'JWT',
-      'Resend',
-      'MySQL',
-      'MongoDB',
-      'Docker',
-      'Nginx',
-      'React.js',
-      'Tailwind CSS',
-      'Google OAuth',
-    ]
+    name: "Apex",
+    image: imagesDir + "apex.webp",
+    description: `Landing page for Apex team, a company related to fundraising. It contains <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">information</span> about the team and an <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">application form</span>. The page is <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">responsive</span> and <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">SEO optimized</span>.`,
+    repositoryLink: "https://we-apex.com",
+    tecnologies: ["TypeScript", "Tailwind CSS", "Astro.js", "Svelte"],
   },
   {
-    name: 'Cargo Loading',
-    image: imagesDir+'cargo_loading.webp',
-    description: "Web service that determines whether multiple elements can fit within a container, and if so, identifies the optimal arrangement and order. This open-source project is from CodeBiting, where I completed an internship and contributed to the development of the REST API and a demo frontend page.",
-    repositoryLink: 'https://github.com/CodeBiting/onion-cargo-loading-service',
+    name: "fundflow",
+    image: imagesDir + "fundflow.webp",
+    description: `A <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">crowdfunding platform</span> with <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">social media features</span> like follows, likes/dislikes, and reviews from collaborators and funders. This was a <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">final grade project</span> done in pairs, with a <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">three-month timeframe</span> to brainstorm, design, and develop the app. We created <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">use case diagrams</span>, <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">designed</span> the <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">UI</span>/<span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">UX</span>, and <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">structured the database</span>. Finally, we developed the app with our chosen tech stack and <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">presented</span> the results <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">to a committee</span>.`,
+    pageLink: "https://fundflow.arcedo.dev/home",
+    repositoryLink: "https://github.com/arcedo/fundflow-Backend",
     tecnologies: [
-      'JavaScript',
-      'Node.js',
-      'Express',
-      'Mocha',
-      'Swagger',
-      'Pug.js'
-    ]
+      "JavaScript",
+      "bun.JS",
+      "express",
+      "JWT",
+      "Resend",
+      "MySQL",
+      "MongoDB",
+      "Docker",
+      "Nginx",
+      "React.js",
+      "Tailwind CSS",
+      "Google OAuth",
+    ],
   },
   {
-    name: 'LearnSphere',
-    image: imagesDir+'learn_sphere.webp',
-    description: 'An educational platform for students and teachers, designed to optimize academic management and track student progress. This was a class assignment where we developed the app in pairs, following the entire process from start to finish. Our responsibilities included designing the frontend, creating UML diagrams, structuring the database, and selecting a technology stack we felt most comfortable using.',
-    repositoryLink: 'https://github.com/arcedo/LearnSphere',
+    name: "Cargo Loading",
+    image: imagesDir + "cargo_loading.webp",
+    description: `<span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">Web service</span> that determines whether multiple <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">elements</span> can <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">fit within a container</span>, and if so, <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">identifies the optimal arrangement and order</span>. This <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">open-source project</span> is from <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">CodeBiting</span>, where I completed an <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">internship</span> and <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">contributed</span> to the <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">development</span> of the <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">REST API</span> and a <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">demo frontend</span> page.`,
+    repositoryLink: "https://github.com/CodeBiting/onion-cargo-loading-service",
     tecnologies: [
-      'JavaScript',
-      'Node.js',
-      'Express',
-      'React.js',
-      'Tailwind CSS'
-    ]
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "Mocha",
+      "Swagger",
+      "Pug.js",
+    ],
   },
-  {
-    name: 'MC-Kinator',
-    image: imagesDir+'mc_kinator.webp',
-    description: "A CLI McDonald's-themed app inspired by Akinator, featuring products from Spain as of November 2023. This was a class assignment where the teachers randomly assigned both the programming language and the theme. For the algorithm, I moved beyond traditional if-else statements by implementing a filtering and selection algorithm that narrows down answers based on user input. This approach enhanced the app's responsiveness and made the decision-making process more intuitive and engaging for users.",
-    repositoryLink: 'https://github.com/arcedo/Akinator',
-    tecnologies: [
-      'Java'
-    ]
-  }
-]
+];

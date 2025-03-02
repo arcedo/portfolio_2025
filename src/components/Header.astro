@@ -8,43 +8,52 @@ interface Props {
 }
 const { id } = Astro.props;
 ---
-<section {id} class="w-full min-h-screen bg-gradient flex justify-center items-center flex-col gap-10 md:gap-8 shadow-primary drop-shadow-md">
-  <h1 class="font-montserrat w-full font-bold text-4xl min-[300px]:text-5xl sm:text-6xl md:text-7xl xl:text-8xl tracking-[-.15rem] sm:tracking-[-.35rem] lg:tracking-[-.5rem] flex flex-col items-center">
+<section {id} class="w-full min-h-screen bg-gradient flex pt-16 md:justify-center items-center flex-col gap-10 md:gap-8 shadow-primary drop-shadow-md">
+  <h1 class="font-montserrat w-11/12 md:w-full font-bold text-4xl sm:text-6xl md:text-7xl xl:text-8xl tracking-[-.15rem] sm:tracking-[-.35rem] lg:tracking-[-.5rem] flex flex-col items-start md:items-center">
     Hi, I'm
     <span class="inline">
       <span id="name-title" class="highlight-offset tracking-tight leading-3 font-dm-sans">Marc Arcedo</span>
     </span>
-    <span class="w-full text-center text-3xl min-[300px]:text-5xl sm:text-7xl md:text-8xl xl:text-9xl tracking-[-.25rem] sm:tracking-[-.6rem] md:tracking-[-.9rem]">
-      A Web Developer.
+    <span class="w-fit md:w-full md:text-center text-[2.4rem] sm:text-7xl md:text-8xl xl:text-9xl tracking-[-.25rem] sm:tracking-[-.6rem] md:tracking-[-.9rem]">
+      An App Developer.
     </span>
   </h1>
-  <p class="font-dm-sans text-sm md:text-base xl:text-xl font-semibold w-10/12 md:w-6/12 text-center">
-    With <span class="highlight-offset">over a year</span> of <span class="highlight-offset">experience</span>. Based in <span class="highlight-offset">Barcelona</span>, Spain, I'm passionate about both <br class="hidden xl:block"><span class="highlight-offset">dev</span> and <span class="highlight-offset">design</span>. I’m focusing on <span class="highlight-offset">backend</span>, exploring better, more efficient ways <br class="hidden xl:block">to code. Right now, I'm learning <span class="highlight-offset">Rust</span> and <span class="highlight-offset">Go</span> to get a stronger handle <br class="hidden xl:block">on <span class="highlight-offset">systems programming</span> and <span class="highlight-offset">lower-level concepts</span>.
-  </p>
+  <div class="flex flex-col items-start w-11/12 gap-5 md:gap-0 md:w-full md:items-center">
+    <p class="font-dm-sans text-base xl:text-xl font-medium md:font-semibold md:w-10/12 text-left md:text-center">
+    With <span class="highlight-offset font-semibold">almost two years</span> of <span class="highlight-offset font-semibold">experience</span>. Based in <span class="highlight-offset font-semibold">Barcelona</span>, Spain. Passionate about both
+    <span class="highlight-offset font-semibold">dev</span> and <span class="highlight-offset font-semibold">design</span>.
+    </p>
+    <p class="font-dm-sans text-base xl:text-lg font-medium md:font-semibold md:w-1/2  text-left md:text-center">
+        I <span class="highlight-offset font-semibold">love</span> exploring <span class="highlight-offset font-semibold">better</span> and more <span class="highlight-offset font-semibold">efficient</span> <span class="highlight-offset font-semibold">ways
+        to code</span>. Right now, I'm <span class="highlight-offset font-semibold">developing</span> things with <span class="highlight-offset font-semibold">Rust</span> and <span class="highlight-offset font-semibold">Go</span> to get a stronger handle
+        on <span class="highlight-offset font-semibold">systems programming</span> and <span class="highlight-offset font-semibold">lower-level concepts</span>, while creating my own projects.
+    </p>
+  </div>
+
   <div class="flex justify-around items-center gap-2.5 md:gap-5">
-    <SocialLinks 
-      href={LINKEDIN_URL} 
+    <SocialLinks
+      href={LINKEDIN_URL}
       bubbleText="LinkedIn"
       anchorClassName="bg-black text-primary p-1 flex justify-center items-center rounded-md w-[2.5rem] h-[2.5rem] sm:w-[3.375rem] sm:h-[3.375rem] hover:scale-105 hover:bg-black/95 transition-all duration-300"
     >
       <Linkedin/>
     </SocialLinks>
-    <SocialLinks 
-      href={GITHUB_URL} 
+    <SocialLinks
+      href={GITHUB_URL}
       bubbleText="GitHub"
       anchorClassName="bg-black text-primary p-1 flex justify-center items-center rounded-md w-[2.5rem] h-[2.5rem] sm:w-[3.375rem] sm:h-[3.375rem] hover:scale-105 hover:bg-black/95 transition-all duration-300"
     >
       <Github/>
     </SocialLinks>
-    <SocialLinks 
-      href={RESUME_URL} 
+    <SocialLinks
+      href={RESUME_URL}
       bubbleText="Resume"
       anchorClassName="bg-black text-primary p-1 flex justify-center items-center rounded-md w-[2.5rem] h-[2.5rem] sm:w-[3.375rem] sm:h-[3.375rem] hover:scale-105 hover:bg-black/95 transition-all duration-300"
     >
       <strong class="font-bold sm:text-3xl text-2xl font-montserrat">CV</strong>
     </SocialLinks>
-    <SocialLinks 
-      href={'mailto:'+EMAIL_ADDRESS} 
+    <SocialLinks
+      href={'mailto:'+EMAIL_ADDRESS}
       bubbleText="arcedo.marc@gmail.com"
       anchorClassName="bg-black text-primary p-1 flex justify-center items-center rounded-md w-[2.5rem] h-[2.5rem] sm:w-[3.375rem] sm:h-[3.375rem] hover:scale-105 hover:bg-black/95 transition-all duration-300 pb-2.5"
     >

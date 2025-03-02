@@ -5,6 +5,6 @@ export interface Experience {
   linkPage: string;
   startMonth: string;
   startYear: number;
-  endMonth: string;
-  endYear: number;
+  endMonth?: string;
+  endYear?: number;
 }

@@ -19,13 +19,13 @@ import { SECTIONS, START_DATE_SEARCH_JOB, GOOGLE_TAG } from '../constants/index'
 			<Navbar client:load sections={SECTIONS} />
 			<Header id={SECTIONS[0]} />
 			<div class="bg-gradient-fixed py-36">
-				<div class="w-10/12 md:w-9/12 mx-auto flex flex-col gap-36">
+				<div class="w-11/12 md:w-9/12 mx-auto flex flex-col gap-36">
 					<Experiences id={SECTIONS[1]} />
-					<Projects client:load id={SECTIONS[2]}> 
+					<Projects client:idle id={SECTIONS[2]}>
 						<ArrowRight slot="projectPreviewArrow" width='20' height='20' />
 						<ArrowTopRight slot="projectTitleArrow" width='28' height='28' />
 						<ArrowTopRight slot="projectRepoArrow" width='20' height='20' />
-					</Projects> 
+					</Projects>
 					<Contact id={SECTIONS[3]} />
 				</div>
 			</div>

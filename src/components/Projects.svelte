@@ -51,11 +51,11 @@
                         <slot name="projectTitleArrow" />
                     </a>
                     <div class="pl-5 pt-2.5 flex flex-col justify-center gap-2.5">
-                        <p class="group-hover:text-primary">{PROJECTS[displayedProject].description}</p>
+                        <p class="group-hover:text-primary " >{@html PROJECTS[displayedProject].description}</p>
                         <div class="flex flex-wrap items-center gap-2 py-2">
                             {#each PROJECTS[displayedProject].tecnologies as technology}
                                 <p
-                                    class="cursor-default px-2.5 py-1.5 rounded-full border border-black/50 bg-primary/20 text-black text-sm group-hover:text-primary transition-all duration-300"
+                                    class="cursor-default group-hover:text-accent/85 transition-colors duration-500 px-2.5 py-1.5 rounded-full border border-black/50 bg-primary/20 text-black text-sm"
                                 >
                                     {technology}
                                 </p>

@@ -22,6 +22,7 @@
         return () => {
             window.removeEventListener('resize', handleResize);
         };
+        console.log(pageWidth);
     });
 </script>
 
@@ -41,7 +42,8 @@
         </span>
         <img
             src={image}
-            alt={`${name} preview image`}
+            alt={`${name} preview`}
+            loading="lazy"
             class={`${displayed ? '' : 'grayscale group-hover:grayscale-0'} transition-colors duration-500`}
         />
     </a>
@@ -56,7 +58,8 @@
         </span>
         <img
             src={image}
-            alt={`${name} preview image`}
+            alt={`${name} preview`}
+            loading="lazy"
             class={`${displayed ? '' : 'grayscale group-hover:grayscale-0'} transition-colors duration-500`}
         />
     </button>
