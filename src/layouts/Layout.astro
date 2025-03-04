@@ -12,11 +12,12 @@ const { title, description, googleTag } = Astro.props;
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
+		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<meta name="author" content="Marc Arcedo Alvaro" />
 		<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=G-S14VF5TDN8`}></script>
 		<script is:inline lang="ts">
 			// Google Tag Manager setup

@@ -12,7 +12,10 @@ import JobSearch from '../components/Job_search.svelte';
 import { SECTIONS, START_DATE_SEARCH_JOB, GOOGLE_TAG } from '../constants/index';
 ---
 
-<Layout title="Arcedo · Developer" description='' googleTag={GOOGLE_TAG}>
+<Layout
+    title="Arcedo · Developer"
+    description="I'm Marc Arcedo, a passionate software developer who loves building impactful software. Explore my projects, experiences, and find ways to connect with me."
+    googleTag={GOOGLE_TAG}>
 	<main class="min-h-screen text-black font-dm-sans relative">
 		{START_DATE_SEARCH_JOB ? <JobSearch client:load startDate={START_DATE_SEARCH_JOB}/>:''}
 		<div class="relative">
