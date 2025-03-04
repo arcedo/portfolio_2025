@@ -123,7 +123,7 @@
                 If you have any doubts or would like to connect, feel free to reach out.
             {/if}
         </p>
-        <button on:click={handleSendMessage} class="relative">
+        <button aria-label="Send message"  on:click={handleSendMessage} class="relative">
             <slot name="sendButtonStyle" />
         </button>
     </div>

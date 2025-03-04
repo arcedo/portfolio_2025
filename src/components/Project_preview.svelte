@@ -12,17 +12,13 @@
     }
 
     onMount(() => {
-        // Set initial width
         handleResize();
 
-        // Add event listener for window resize
         window.addEventListener('resize', handleResize);
 
-        // Clean up event listener on component destroy
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-        console.log(pageWidth);
     });
 </script>
 
@@ -48,7 +44,7 @@
         />
     </a>
 {:else}
-    <button on:click={onClick} class={`border-l border-black ${isEven ? 'border-r' : ''} border-black group`}>
+    <button aria-label={`View more about ${name} project`} on:click={onClick} class={`border-l border-black ${isEven ? 'border-r' : ''} border-black group`}>
         <span
             class={`flex justify-between items-center text-sm font-semibold md:text-base border-b border-black pl-1 md:pl-2.5 font-montserrat md:font-bold ${displayed ? 'text-accent bg-black' : 'group-hover:text-accent group-hover:bg-black'} transition-all duration-500`}
         >
