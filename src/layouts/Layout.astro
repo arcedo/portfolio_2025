@@ -17,15 +17,15 @@ const { title, description, googleTag } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTag}`}></script>
-		<script lang="ts">
+		<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${googleTag}`}></script>
+		<script is:inline lang="ts">
 			// Google Tag Manager setup
 			window.dataLayer = window.dataLayer || [];
-			
+
 			function gtag(event) {
 				window.dataLayer.push(event);
 			}
-			
+
 			gtag({ 'js': new Date() });
 			gtag({ 'config': googleTag });
 		</script>
