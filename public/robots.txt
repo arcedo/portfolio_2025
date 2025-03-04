@@ -1,6 +1,6 @@
 User-agent: *
 Disallow: /
-
-User-agent: *
 Allow: /$
+Allow: /favicon.svg
+Allow: /sitemap.xml
 Sitemap: https://arcedo.dev/sitemap.xml
