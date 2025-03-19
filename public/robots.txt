@@ -3,4 +3,7 @@ Disallow: /
 Allow: /$
 Allow: /favicon.svg
 Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /cv_marc_arcedo_en.pdf
+
 Sitemap: https://arcedo.dev/sitemap.xml
