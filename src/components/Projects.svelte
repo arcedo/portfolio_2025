@@ -31,7 +31,7 @@
                 {/if}
             {/each}
         </div>
-        <article class="sticky py-[6%] top-[39%] z-0 self-start w-1/2 hidden lg:block">
+        <article class="sticky top-[39%] z-0 self-start w-1/2 hidden lg:block">
             {#if displayedProject === -1}
                 <div
                     class="hover:bg-black hover:text-accent py-24 border-black border hover:shadow-md flex justify-center items-center transition-colors duration-500"
