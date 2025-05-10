@@ -77,12 +77,14 @@ const { title, description } = Astro.props;
     background-size: 100% 100%;
 }
 
-	.bg-gradient{
-    background-attachment: fixed;
-    background: radial-gradient(circle, #EDF2FB, #D7E3FC, #CCDBFD, #C1D3FE, #E2EAFC);
-    background-size: 200% 150%;
-    animation: gradient-radial 10s ease infinite alternate;
-  }
+    .bg-gradient {
+        background-image: radial-gradient(circle, #EDF2FB, #D7E3FC, #CCDBFD, #C1D3FE, #E2EAFC);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 200vw 150vh;
+        animation: gradient-radial 20s ease-in-out infinite alternate;
+    }
+
 	@keyframes gradient-radial {
     0% {
         background-position: 0% 50%;

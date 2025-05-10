@@ -18,6 +18,7 @@
                     name={project.name}
                     isEven={index % 2 === 0}
                     displayed={displayedProject === index}
+                    date={project.date}
                     href={project.repositoryLink}
                     onClick={() => {
                         displayedProject = index;
@@ -38,19 +39,22 @@
                     <p class="highlight-offset highlight-none">Click the projects to see more</p>
                 </div>
             {:else}
-                <div class="border-x border-black hover:bg-black transition-colors duration-500 group pb-5">
+                <div class="border-x border-black hover:bg-black transition-colors duration-500 group py-5">
+                    <p class="text-black/70 font-light pl-5 group-hover:text-primary/90 transition-colors duration-500">
+                        {PROJECTS[displayedProject].date}
+                    </p>
                     <a
                         href={PROJECTS[displayedProject].pageLink
                             ? PROJECTS[displayedProject].pageLink
                             : PROJECTS[displayedProject].repositoryLink}
                         target="_blank"
-                        class="flex justify-between items-end pl-5 pt-5 border-black group-hover:border-primar border-b transition-colors duration-500 group/arrow group-hover:text-primary hover:!text-accent"
+                        class="flex justify-between items-end pl-5 border-black group-hover:border-primar border-b transition-colors duration-500 group/arrow group-hover:text-primary hover:!text-accent"
                     >
                         <h3 class="font-montserrat font-bold text-2xl">{PROJECTS[displayedProject].name}</h3>
                         <!-- <ArrowTopRight width="28" height="28"/> -->
                         <slot name="projectTitleArrow" />
                     </a>
-                    <div class="pl-5 pt-2.5 flex flex-col justify-center gap-2.5">
+                    <div class="px-5 pt-2.5 flex flex-col justify-center gap-2.5">
                         <p class="group-hover:text-primary " >{@html PROJECTS[displayedProject].description}</p>
                         <div class="flex flex-wrap items-center gap-2 py-2">
                             {#each PROJECTS[displayedProject].tecnologies as technology}

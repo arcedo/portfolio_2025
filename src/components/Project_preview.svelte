@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let image, name, isEven, onClick, displayed, href;
+    export let image, name, isEven, onClick, displayed, href, date;
     import { onMount } from 'svelte';
     import { writable } from 'svelte/store';
 

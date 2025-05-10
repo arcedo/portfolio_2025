@@ -16,19 +16,19 @@ import { SECTIONS, START_DATE_SEARCH_JOB } from '../constants/index';
     title="Arcedo · Developer"
     description="I'm Marc Arcedo, a passionate software developer who loves building impactful software. Explore my projects, experiences, and find ways to connect with me."
 >
-	<main class="min-h-screen text-black font-dm-sans relative">
+	<main class="min-h-screen text-black font-dm-sans relative bg-gradient">
 		{START_DATE_SEARCH_JOB ? <JobSearch client:load startDate={START_DATE_SEARCH_JOB}/>:''}
 		<div class="relative">
 			<Navbar client:load sections={SECTIONS} />
 			<Header id={SECTIONS[0]} />
-			<div class="bg-gradient-fixed py-36">
+			<div class="py-36">
 				<div class="w-11/12 md:w-9/12 mx-auto flex flex-col gap-36">
-					<Experiences id={SECTIONS[1]} />
-					<Projects client:idle id={SECTIONS[2]}>
+					<Projects client:idle id={SECTIONS[1]}>
 						<ArrowRight slot="projectPreviewArrow" width='20' height='20' />
 						<ArrowTopRight slot="projectTitleArrow" width='28' height='28' />
 						<ArrowTopRight slot="projectRepoArrow" width='20' height='20' />
 					</Projects>
+					<Experiences id={SECTIONS[2]} />
 					<Contact id={SECTIONS[3]} />
 				</div>
 			</div>

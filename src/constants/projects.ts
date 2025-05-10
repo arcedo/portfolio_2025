@@ -4,11 +4,28 @@ const imagesDir = "/images/";
 //<span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold "></span>,
 export const PROJECTS: Project[] = [
   {
+    name: "Financial AI Companion",
+    image: imagesDir + "financial_ai_companion.webp",
+    description: `This project was created during a Hackathon (<span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">HackUPC</span>) that I participated in with a friend. We had 36 hours to develop and demo the idea. We built a <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">financial companion</span> app that helps users with their investments and <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">planning</span>. The app is <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">AI-powered</span> and uses <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">Llama</span> to provide advice through a microservice built with <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">Node.js</span> and Express. We used <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">Go</span> as the main backend language, and the frontend was developed with <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">React.js</span> and <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold">Tailwind CSS</span>.`,
+    repositoryLink: "https://github.com/arcedo/financial-ai-backend",
+    pageLink: "https://devpost.com/software/financial-ai-companion",
+    tecnologies: [
+      "Llama",
+      "Go",
+      "TypeScript",
+      "React.js",
+      "MongoDB",
+      "Tailwind CSS",
+    ],
+    date: "2 - 4 May 2025",
+  },
+  {
     name: "Apex",
     image: imagesDir + "apex.webp",
     description: `Landing page for Apex team, a company related to fundraising. It contains <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">information</span> about the team and an <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">application form</span>. The page is <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">responsive</span> and <span class="group-hover:text-accent/90 transition-colors duration-500 font-semibold ">SEO optimized</span>.`,
     repositoryLink: "https://we-apex.com",
     tecnologies: ["TypeScript", "Tailwind CSS", "Astro.js", "Svelte"],
+    date: "Nov 2024 - Present",
   },
   {
     name: "fundflow",
@@ -30,6 +47,7 @@ export const PROJECTS: Project[] = [
       "Tailwind CSS",
       "Google OAuth",
     ],
+    date: "Feb - May 2024",
   },
   {
     name: "Cargo Loading",
@@ -44,5 +62,6 @@ export const PROJECTS: Project[] = [
       "Swagger",
       "Pug.js",
     ],
+    date: "Jul - Dec 2023",
   },
 ];

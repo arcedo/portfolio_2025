@@ -3,13 +3,13 @@ import SocialLinks from "./Social_links.astro";
 import ArrowTopRight from "../icons/arrow_top_right.astro";
 import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constants/index';
 ---
-<footer class="pt-16 pb-14 text-primary">
+<footer class="pt-16 pb-14 text-primary bg-black">
   <div class="w-10/12 md:w-9/12 mx-auto grid md:grid-cols-2 grid-cols-1 gap-y-8">
     <div class="flex flex-col items-start gap-2 text-primary/80 text-sm relative order-last md:order-first">
       <p class="">
-        Based on my previous design and build using 
-        <span class="text-primary/90 font-semibold">Astro</span> with some <span class="text-primary/90 font-semibold">Svelte</span> and <span class="text-primary/90 font-semibold">Tailwind CSS</span>, 
-        deployed in my own <span class="text-primary/90 font-semibold">VPS</span> with <span class="text-primary/90 font-semibold">Ngnix</span>. Titles with font <span class="text-primary/90 font-semibold">Montserrat</span> 
+        Based on my previous design and build using
+        <span class="text-primary/90 font-semibold">Astro</span> with some <span class="text-primary/90 font-semibold">Svelte</span> and <span class="text-primary/90 font-semibold">Tailwind CSS</span>,
+        deployed in my own <span class="text-primary/90 font-semibold">VPS</span> with <span class="text-primary/90 font-semibold">Ngnix</span>. Titles with font <span class="text-primary/90 font-semibold">Montserrat</span>
         (the best) and the rest in font <span class="text-primary/90 font-semibold">DM Sans</span>.
       </p>
       <pre class="text-[0.7rem] group hover:text-primary transition-colors duration-100 cursor-default hidden md:block">
@@ -25,8 +25,8 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
       <h2 class="font-montserrat tracking-[-.1rem] font-bold text-3xl md:text-right pb-2 md:pb-4">Social</h2>
       <ul class="flex flex-col gap-1 md:gap-2.5 justify-center items-start md:items-end">
         <li>
-          <SocialLinks 
-            href={LINKEDIN_URL} 
+          <SocialLinks
+            href={LINKEDIN_URL}
             anchorClassName="flex items-end group/arrow hover:text-accent transition-all duration-500"
           >
             LinkedIn
@@ -34,8 +34,8 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
           </SocialLinks>
         </li>
         <li>
-          <SocialLinks 
-            href={GITHUB_URL} 
+          <SocialLinks
+            href={GITHUB_URL}
             anchorClassName="flex items-end group/arrow hover:text-accent transition-all duration-500"
           >
             GitHub
@@ -43,8 +43,8 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
           </SocialLinks>
         </li>
         <li>
-          <SocialLinks 
-            href={RESUME_URL} 
+          <SocialLinks
+            href={RESUME_URL}
             anchorClassName="flex items-end group/arrow hover:text-accent transition-all duration-500"
           >
             Resume
@@ -52,8 +52,8 @@ import { LINKEDIN_URL, GITHUB_URL, RESUME_URL, EMAIL_ADDRESS } from '../constant
           </SocialLinks>
         </li>
         <li>
-          <SocialLinks 
-            href={'mailto:'+EMAIL_ADDRESS} 
+          <SocialLinks
+            href={'mailto:'+EMAIL_ADDRESS}
             anchorClassName="flex items-end group/arrow hover:text-accent transition-all duration-500"
           >
             {EMAIL_ADDRESS}

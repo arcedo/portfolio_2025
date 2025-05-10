@@ -5,4 +5,5 @@ export interface Project {
   pageLink?: string;
   repositoryLink: string;
   tecnologies: Array<string>;
+  date: string;
 }
